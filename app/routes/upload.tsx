@@ -59,6 +59,7 @@ const Upload = () => {
     await kv.set(`resume:${uuid}`, JSON.stringify(data));
 
     setStatusText("Analyzing...");
+    console.log(uuid);
 
     const feedback = await ai.feedback(
       uploadedFile.path,
@@ -75,6 +76,7 @@ const Upload = () => {
     await kv.set(`resume:${uuid}`, JSON.stringify(data));
     setStatusText("Analysis complete, redirecting...");
     console.log(data);
+    navigate(`/resume/${uuid}`);
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
