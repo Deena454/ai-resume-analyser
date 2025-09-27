@@ -1,12 +1,11 @@
 import { type FormEvent, useState } from "react";
-import Navbar from "../components/Navbar";
-import FileUploader from "../components/FileUploader";
-import { usePuterStore } from "../lib/puter";
+import Navbar from "~/components/Navbar";
+import FileUploader from "~/components/FileUploader";
+import { usePuterStore } from "~/lib/puter";
 import { useNavigate } from "react-router";
-import { convertPdfToImage } from "../lib/pdf2img";
-import { generateUUID } from "../lib/utils";
+import { convertPdfToImage } from "~/lib/pdf2img";
+import { generateUUID } from "~/lib/utils";
 import { prepareInstructions } from "../constants/index";
-// import {prepareInstructions} from "../../constants";
 
 const Upload = () => {
   const { auth, isLoading, fs, ai, kv } = usePuterStore();
@@ -73,6 +72,7 @@ const Upload = () => {
         : feedback.message.content[0].text;
 
     data.feedback = JSON.parse(feedbackText);
+    console.log(feedbackText);
     await kv.set(`resume:${uuid}`, JSON.stringify(data));
     setStatusText("Analysis complete, redirecting...");
     console.log(data);

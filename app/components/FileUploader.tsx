@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { formatSize } from "../lib/utils";
 
@@ -16,7 +16,7 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
     [onFileSelect]
   );
 
-  const maxFileSize = 20 * 1024 * 1024;
+  const maxFileSize = 20 * 1024 * 1024; // 20MB in bytes
 
   const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
     useDropzone({
@@ -27,6 +27,7 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
     });
 
   const file = acceptedFiles[0] || null;
+
   return (
     <div className="w-full gradient-border">
       <div {...getRootProps()}>
@@ -35,13 +36,13 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
         <div className="space-y-4 cursor-pointer">
           {file ? (
             <div
-              className="uploader-selected-file "
+              className="uploader-selected-file"
               onClick={(e) => e.stopPropagation()}
             >
               <img src="/images/pdf.png" alt="pdf" className="size-10" />
               <div className="flex items-center space-x-3">
                 <div>
-                  <p className="text-lg text-gray-700 font-medium truncate">
+                  <p className="text-sm font-medium text-gray-700 truncate max-w-xs">
                     {file.name}
                   </p>
                   <p className="text-sm text-gray-500">
@@ -77,5 +78,4 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
     </div>
   );
 };
-
 export default FileUploader;
