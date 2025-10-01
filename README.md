@@ -1,87 +1,42 @@
-# Welcome to React Router!
+# Resumind 🎯 — AI Resume Analyzer
 
-A modern, production-ready template for building full-stack React applications using React Router.
+**Resumind** is an AI-powered resume analyzer that helps job seekers optimize their resumes by comparing them with job descriptions. It provides an ATS (Applicant Tracking System) score, highlights relevant and missing keywords, and offers personalized suggestions to improve the resume's relevance for a specific job role.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+🌐 Live Demo: [Click here to try Resumind](https://ai-resume-analyser-omega.vercel.app/)🔗
 
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
 
 ---
 
-Built with ❤️ using React Router.
+## 🌟 Features
+
+- ✅ Upload your resume (PDF/Docx supported)
+- ✅ Paste or upload the job description
+- ✅ Get an ATS relevance score (0–100)
+- ✅ Identify matching and missing keywords
+- ✅ Get suggestions to improve your resume
+- ✅ Built with modern, responsive UI
+
+---
+
+## 🚀 Tech Stack
+
+- **Frontend**: [React](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/)
+- **State Management**: React Hooks
+- **Styling**: CSS / Tailwind / Styled Components (update if applicable)
+- **File Upload**: HTML5 File API
+- **AI/Parsing Logic**: [Puter.js](https://puter.com/docs/) for virtual file system and logic handling and Ai modelling
+- **Deployment**: [Vercel](https://vercel.com/) 
+
+---
+
+## 📦 Installation & Running Locally
+
+Clone the repo:
+
+```bash
+git clone https://github.com/your-username/resumind.git
+cd resumind
+
+npm install
+
+npm run dev
